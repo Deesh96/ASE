@@ -91,7 +91,8 @@ public class Aardvark {
     }
   }
 
-  int pg() {
+  // Rename Method 
+  int PrintGrid() {
     for (int are = 0; are < 7; are++) {
       for (int see = 0; see < 8; see++) {
         if (grid[are][see] != 9) {
@@ -275,7 +276,10 @@ public class Aardvark {
   public final int ZERO = 0;
 
   public void run() {
-    IOSpecialist io = new IOSpecialist();
+//Middle Man Remove	  
+//    IOSpecialist io = new IOSpecialist();
+    IOLibrary io = new IOLibrary();
+
 
     System.out
         .println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
