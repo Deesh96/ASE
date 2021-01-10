@@ -89,10 +89,28 @@ public class PictureFrame {
       g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
     }
 
+    
+    //Consolidate Duplicate Fragments
+
     protected void paintComponent(Graphics g) {
       g.setColor(Color.YELLOW);
       g.fillRect(0, 0, getWidth(), getHeight());
 
+      if (master.mode == 0 || master.mode == 1 ) {
+    	  drawGridLines(g);
+          drawHeadings(g);
+          drawGrid(g);
+      }
+      if (master.mode == 1) {
+          
+          master.drawGuesses(g);
+        }
+      if (master.mode == 0) {
+          
+          master.drawDominoes(g);
+        }
+      
+      
       // numbaz(g);
       //
       // if (master!=null && master.orig != null) {
@@ -103,18 +121,8 @@ public class PictureFrame {
       // }
       //
       // drawGrid(g);
-      if (master.mode == 1) {
-        drawGridLines(g);
-        drawHeadings(g);
-        drawGrid(g);
-        master.drawGuesses(g);
-      }
-      if (master.mode == 0) {
-        drawGridLines(g);
-        drawHeadings(g);
-        drawGrid(g);
-        master.drawDominoes(g);
-      }
+     
+      
     }
 
     public Dimension getPreferredSize() {
