@@ -279,17 +279,8 @@ public class Aardvark {
 //Middle Man Remove	  
 //    IOSpecialist io = new IOSpecialist();
     IOLibrary io = new IOLibrary();
-
-
-    System.out
-        .println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
-    System.out.println("Version 1.0 (c), Kevan Buckley, 2010");
-    System.out.println();
-    System.out.println(MultiLinugualStringTable.getMessage(0));
-    playerName = io.getString();
-
-    System.out.printf("%s %s. %s", MultiLinugualStringTable.getMessage(1),
-        playerName, MultiLinugualStringTable.getMessage(2));
+    PrintWlcmNote();
+   
 
     int _$_ = -9;
     while (_$_ != ZERO) {
@@ -832,7 +823,21 @@ public class Aardvark {
     }
 
   }
+  
+  //Using Extract Method
+  public void  PrintWlcmNote(){
+	  System.out
+      .println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
+  System.out.println("Version 1.0 (c), Kevan Buckley, 2010");
+  System.out.println();
+  System.out.println(MultiLinugualStringTable.getMessage(0));
+  playerName = io.getString();
 
+  System.out.printf("%s %s. %s", MultiLinugualStringTable.getMessage(1),
+      playerName, MultiLinugualStringTable.getMessage(2));
+  }
+
+  
   private void recordTheScore() {
     try {
       PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
