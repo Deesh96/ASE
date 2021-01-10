@@ -225,23 +225,33 @@ public class Aardvark {
     return (x == Math.min(d.lx, d.hx)) && (y == Math.min(d.ly, d.hy));
   }
 
-  private Domino findDominoAt(int x, int y) {
-    for (Domino d : _d) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+  //private Domino findDominoAt(int x, int y) {
+    //for (Domino d : _d) {
+      //if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
+        //return d;
+  //    }
+  //  }
+  //  return null;
+ // }
 
-  private Domino findGuessAt(int x, int y) {
-    for (Domino d : _g) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
-        return d;
-      }
-    }
-    return null;
-  }
+  //private Domino findGuessAt(int x, int y) {
+   // for (Domino d : _g) {
+    //  if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
+     //   return d;
+   //   }
+   // }
+   // return null;
+  //}
+  
+  private Domino DindGuessandDominoAt(int x, int y,  List<Domino> _r) {
+	  for (Domino d : _r) {
+		  if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
+		  return d;
+		  }
+		  }
+		  return null;
+		  }
+  } 
 
   private Domino findGuessByLH(int x, int y) {
     for (Domino d : _g) {
