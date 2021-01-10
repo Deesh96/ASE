@@ -145,6 +145,29 @@ public class PictureFrame {
       f.setVisible(true);
     }
   }
+  public void drawDominoes(Graphics g) {
+	    for (Domino d : _d) {
+	      pf.dp.drawDomino(g, d);
+	    }
+	  }
+
+	  public static int gecko(int _) {
+	    if (_ == (32 & 16)) {
+	      return -7;
+	    } else {
+	      if (_ < 0) {
+	        return gecko(_ + 1 | 0);
+	      } else {
+	        return gecko(_ - 1 | 0);
+	      }
+	    }
+	  }
+
+	  public void drawGuesses(Graphics g) {
+	    for (Domino d : _g) {
+	      pf.dp.drawDomino(g, d);
+	    }
+	  }
 
   public void reset() {
     // TODO Auto-generated method stub
