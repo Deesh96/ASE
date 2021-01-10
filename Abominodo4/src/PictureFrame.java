@@ -39,18 +39,22 @@ public class PictureFrame {
     }
 
     public void drawDomino(Graphics g, Domino d) {
+    	
+    	int Color1 = 20;
+    	int DigtDraw =30;
+    	
       if (d.placed) {
         int y = Math.min(d.ly, d.hy);
         int x = Math.min(d.lx, d.hx);
         int w = Math.abs(d.lx - d.hx) + 1;
         int h = Math.abs(d.ly - d.hy) + 1;
         g.setColor(Color.WHITE);
-        g.fillRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
+        g.fillRect(Color1 + x * Color1, Color1 + y * Color1, w * Color1, h * Color1);
         g.setColor(Color.RED);
-        g.drawRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
-        drawDigitGivenCentre(g, 30 + d.hx * 20, 30 + d.hy * 20, 20, d.high,
+        g.drawRect(20 + x * Color1, Color1 + y * Color1, w * Color1, h * Color1);
+        drawDigitGivenCentre(g, DigtDraw + d.hx * Color1, DigtDraw + d.hy * Color1, Color1, d.high,
             Color.BLUE);
-        drawDigitGivenCentre(g, 30 + d.lx * 20, 30 + d.ly * 20, 20, d.low,
+        drawDigitGivenCentre(g, DigtDraw + d.lx * Color1, DigtDraw + d.ly * Color1, Color1, d.low,
             Color.BLUE);
       }
     }
