@@ -1,14 +1,19 @@
 
 public class Location extends SpacePlace {
-  public int c;
-  public int r;
+  //public int c;
+  //public int r;
+  
+  //Introduce Explaining Variable
+
+  public int Column;
+  public int Row;
   public DIRECTION d;
   
   public enum DIRECTION {VERTICAL, HORIZONTAL};
   
   public Location(int r, int c) {
-    this.r = r;
-    this.c = c;
+    this.Row = r;
+    this.Column= c;
   }
 
   public Location(int r, int c, DIRECTION d) {    
