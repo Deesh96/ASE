@@ -38,16 +38,17 @@ public class PictureFrame {
       }
     }
 
+    //Split Temporary Variables
     public void drawDomino(Graphics g, Domino d) {
     	
     	int Color1 = 20;
     	int DigtDraw =30;
     	
       if (d.placed) {
-        int y = Math.min(d.ly, d.hy);
-        int x = Math.min(d.lx, d.hx);
-        int w = Math.abs(d.lx - d.hx) + 1;
-        int h = Math.abs(d.ly - d.hy) + 1;
+        final int y = Math.min(d.ly, d.hy);
+        final int x = Math.min(d.lx, d.hx);
+        final int w = Math.abs(d.lx - d.hx) + 1;
+        final int h = Math.abs(d.ly - d.hy) + 1;
         g.setColor(Color.WHITE);
         g.fillRect(Color1 + x * Color1, Color1 + y * Color1, w * Color1, h * Color1);
         g.setColor(Color.RED);
@@ -77,9 +78,10 @@ public class PictureFrame {
       String txt = Integer.toString(n);
       g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
     }
-
+    
+    //Split Temporary Variables
     void fillDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
-      int radius = diameter / 2;
+      final int radius = diameter / 2;
       g.setColor(Color.GREEN);
       g.fillOval(x - radius, y - radius, diameter, diameter);
       g.setColor(Color.BLACK);
